@@ -49,21 +49,23 @@ boxplot(r2~r3, data=randomdata)
 
 #作业
 #1
-green <- grep('green', colors(), value = T, ignore.case = T)
-length(green)
-barplot(height = rep(1, 40), col=green, names.arg = green,
-        horiz = T, las=1, cex.names=0.5, xaxt='n', border = 'green')
+greens <- grep('green', colors(), value = T, ignore.case = T)
+length(greens)
+par(mar=c(2,6,2,6))
+barplot(height = rep(1, length(green)), col=greens, names.arg = greens,
+        horiz = T, las=1, cex.names=0.5, xaxt='n', border = greens)
 
 #2
 carb <- table(mtcars$carb)
 carb <- sort(carb, decreasing = T)
 #carb <- carb[order(carb, decreasing = T)]
 carb
+
 library(RColorBrewer)
-cols<-brew.pal(6, 'Set3')
+cols<-brewer.pal(6, 'Set3')
 
 paste('carb-', names(carb))
-pie(carb, labels=paste('carb-', names(carb)), cex=0.6, 
+pie(carb, labels=paste('carb-', names(carb)), cex=0.4, 
     border = cols, col=cols, clockwise = T)
 
 pie(rev(carb), 

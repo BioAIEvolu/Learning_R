@@ -61,13 +61,15 @@ plot(1:8, rep(1,8), col=col3, pch=16, cex=3)
 #作业
 library(RColorBrewer)
 display.brewer.all()
+brewer.pal.info
 col1 <- brewer.pal(9, 'Set1')
 plot(1:8, rep(1, 8), col=col1, pch=16, cex=2)  #1
 
 #2 扩展颜色
 col2 <- colorRampPalette(col1)(30)
-col2 <- colorRampPalette(brewer.pal(9, 'Set1'))(30)
-plot(1:30, col=col2, pch=16, cex=2)
+#col2 <- colorRampPalette(brewer.pal(9, 'Set1'))(30)
+par(mar=c(12,4,12,4))
+plot(1:30, rep(2, 30),col=col2, pch=15, cex=2)
 
 #3
 display.brewer.all()
@@ -85,5 +87,5 @@ mtcars <- mtcars[order(mtcars$hp), ]
 col3<-brewer.pal(9, 'Greens')
 col4<-colorRampPalette(col3)(nrow(mtcars))
 
-col4 <- colorRampPalette(c('White', 'Green'))(length(mtcars$wt))
+#col4 <- colorRampPalette(c('White', 'Green'))(length(mtcars$wt))
 plot(mtcars$wt, mtcars$disp, col=col4, pch=16, cex=2.6)

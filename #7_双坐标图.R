@@ -54,3 +54,4 @@ mtext(text='信心指数', side=4, line=2)
 legend('topright', legend = c('SH收益率', '信心指数'),
         col=c('dimgrey', 'black'), lty=c(1,1), pch=c(NA, 8),
         bty='n', cex=0.6)
+
