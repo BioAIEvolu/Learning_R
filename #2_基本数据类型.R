@@ -1,5 +1,5 @@
 #因子型
-ex <- c('F','M', 'F', 'M', 'F')
+sex <- c('F','M', 'F', 'M', 'F')
 sexf <- factor(sex)
 
 num1 <- c(9.1, 8.2, 7.3)
@@ -11,7 +11,7 @@ c(1, 'a', TRUE)
 num1[1] <- 100
 num1[c(1, 3)] <- c(99.9, 77.7)
 num1[c(T,F,T)]
-num[-2]
+num1[-2]
 
 
 num3 <- c('First'=9.1, 'second'=8.2, 'third'=7.3)
