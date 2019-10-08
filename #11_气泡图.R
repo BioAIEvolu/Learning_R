@@ -78,12 +78,17 @@ col3 <- pair[3]
 symbols(mtcars$qsec, mtcars$wt, 
         circles = sqrt(mtcars$disp), inches = 0.3,
         bg=c(col1, col2, col3)[mtcars$class],
-        fg=c(col1, col2, col3)[mtcars$class]
-        )
+        fg=c(col1, col2, col3)[mtcars$class])
 
 #方法2
 cols <- brewer.pal(3, 'YlGnBu')
+barplot(rep(1, 3), col=cols)
+#给class等于2和3的类别颜色添加透明度，当前还没有什么方法给16进制的颜色添加透明度
+#没有现成的函数
+#添加16进制的透明度。百分比透明度与十六进制透明度的对应关系表
+#85%透明度对应透明度为D9
 cols[2:3] <- paste(cols[2:3], 'D9', sep='')
-colsn
 symbols(mtcars$qsec, mtcars$wt, circles = sqrt(mtcars$disp), inches=0.3,
         bg=cols[mtcars$class], fg=cols[mtcars$class])
+
+
